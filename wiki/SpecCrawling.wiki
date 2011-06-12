@@ -21,3 +21,27 @@
         -> 各案件の投票結果のページ
 }}}
 
+=== 「ライブラリ」ページの各会期のレイアウト ===
+
+ソースは次のようになっています。
+
+{{{
+<tr>
+<td rowspan="3" class="text80">第177回国会<br>
+常会</td>
+<td colspan="7" class="text80">平成２３年（2011年）　１月２４日～平成２３年　６月２２日　（１５０日間）</td>
+</tr>
+<tr>
+<td class="text80"><!--<a href="../gianjoho/old_gaiyo/177/m-177.html" title="審議概要">-->審議概要<!--</a>--></td>
+<td class="text80"><a href="../joho1/kousei/koho/177/keika.htm" title="会議の経過">会議の経過</a></td>
+<td class="text80"><a href="../kaigijoho/shitsugi/177/shitsugi_ind.html" title="質疑項目">質疑項目</a></td>
+<td class="text80"><a href="../joho1/kousei/vote/177/vote_ind.htm" title="投票結果">投票結果</a></td>
+<td class="text80"><a href="../joho1/kousei/gian/177/gian.htm" title="議案情報">議案情報</a></td>
+<td class="text80"><a href="../joho1/kousei/seigan/177/seigan.htm" title="請願">請願</a></td>
+</tr>
+<tr> 
+... 略 ...
+</tr>
+}}}
+
+163回以降は 3行、162回以前は 2行でレイアウトが異なります。各会期の種類（常会、臨時会、特別会）の区別はこのページだけで、リンク先にはありません。当面、収集する情報項目には入れないことにします。テキスト「投票結果」を持つ "a" 要素の "href" 属性の値が各会期の本会議投票結果のページの URL になります。この URL は相対パスで記述されています。
