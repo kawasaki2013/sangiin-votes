@@ -1,0 +1,367 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+
+<title>本会議投票結果：参議院ホームページ</title>
+<link rel="stylesheet" title="" href="../../common/css/import.css" type="text/css" media="all">
+<link rel="alternate stylesheet" type="text/css" media="all" title="small" href="../../common/css/small.css">
+<link rel="alternate stylesheet" type="text/css" media="all" title="medium" href="../../common/css/medium.css">
+<link rel="alternate stylesheet" type="text/css" media="all" title="large" href="../../common/css/large.css">
+<script type="text/javascript" src="../../common/js/fontsizer.js">
+</script>
+
+<STYLE type="text/css">
+<!--
+.pro   { background: #FFFF66; white-space: pre; text-align: center; font-size: 100%;}
+.con   { background: #99FF99; white-space: pre; color: #009900; text-align: center; font-size: 100%;}
+.ttl   { white-space: pre; font-size: 100%;}
+.party { background: #CCCCFF; white-space: pre; text-align: left;}
+.nam   { text-align: left; font-size: 100%;}
+-->
+</STYLE>
+</head>
+
+<body>
+<div id="OutWrapper">
+<!-- ラッパーここから -->
+<div id="Wrapper">
+<!-- ヘッダーここから -->
+<div id="Header">
+<div id="HeadLeft">
+<p id="Logo"><a href="/"><img src="../../common/images/layout/logo.jpg" alt="参議院" width="471" height="58"></a></p>
+</div>
+<div id="Headright">
+<form action="http://online.sangiin.go.jp/cgi-bin/search/search.cgi" method="get">
+<input type="image" src="../../common/images/navigation/search_btn.jpg" alt="検索" name="search" value="検索" id="SearBtn">
+<input name="q" class="font12px" value="" size="20" type="text">
+<a href="http://online.sangiin.go.jp/cgi-bin/search/search.cgi" title="検索方法">検索方法</a>
+</form>
+<div id="FonSiBox">
+<ul id="FontSizer">
+<li><img src="../../common/images/layout/font_size_title.gif" alt="文字サイズの変更" width="96" height="12" id="FST">
+</li>
+<li><a href="#OutWrapper" title="標準" onclick="return selectStyle('small')" onkeypress="return selectStyle('small')"><img src="../../common/images/navigation/sizebt_small.jpg" alt="標準" name="small" width="29" height="18" id="small"></a></li>
+<li><a href="#OutWrapper" title="拡大" onclick="return selectStyle('medium')" onkeypress="return selectStyle('medium')"><img src="../../common/images/navigation/sizebt_base.jpg" alt="拡大" name="medium" width="29" height="18" id="medium"></a></li>
+<li><a href="#OutWrapper" title="最大" onclick="return selectStyle('large')" onkeypress="return selectStyle('large')"><img src="../../common/images/navigation/sizebt_big.jpg" alt="最大" name="large" width="29" height="18" id="large"></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<!--// ヘッダーここまで -->
+
+<!-- グローバルナビゲーションここから -->
+<div id="PrimaryNavi">
+<ul id="GlobalNavi">
+<li id="Sitemap"><a href="/japanese/sitemap/index.html" title="サイトマップ">サイトマップ</a></li>
+<li id="Faq"><a href="/japanese/goiken_gositumon/faq/index.html" title="よくある質問">よくある質問</a></li>
+<li id="Link"><a href="/japanese/link/index.html" title="リンク集">リンク集</a></li>
+<li id="English"><a href="/eng/index.htm" title="English">English</a></li>
+</ul>
+</div>
+<!--// グローバルナビゲーションここまで -->
+<div class="clearing"><img src="../../common/images/layout/spacer.gif" alt="" width="1" height="1"></div>
+
+<!-- ローカルコンテンツボックスここから -->
+<div id="LocalContents">
+
+<!-- 左ボックスここから -->
+<div id="LocalLeft">
+<dl class="local_navigation">
+<dt id="HomeLink"><a href="/" title="トップページに戻る">トップページに戻る</a></dt>
+<dt><a href="/japanese/joho1/kousei/giin/current/yakuin.htm" target="_parent" title="議員情報">議員情報</a></dt>
+<dt><a href="/japanese/kon_kokkaijyoho/index.html" title="今国会情報" target="_parent">今国会情報</a></dt>
+<dt><a href="/japanese/kaiki/index.html" target="_parent" title="ライブラリー">ライブラリー</a></dt>
+<dt><a href="/japanese/joho1/kousei/gian/current/gian.htm" target="_parent" title="議案情報">議案情報</a></dt>
+<dt><a href="/japanese/joho1/kaigirok/kaigirok.htm" target="_parent" title="会議録情報">会議録情報</a></dt>
+<dt><a href="/japanese/joho1/kousei/seigan/current/seigan.htm" target="_parent" title="請願">請願</a></dt>
+<dt><a href="/japanese/joho1/kousei/syuisyo/current/syuisyo.htm" target="_parent" title="質問主意書">質問主意書</a></dt>
+<dt><a href="/japanese/joho1/kousei/koho/current/koho.htm" target="_parent" title="参議院公報">参議院公報</a></dt>
+</dl>
+
+<dl class="local_navigation">
+<dt><a href="/japanese/aramashi/index.html" title="参議院のあらまし">参議院のあらまし</a></dt>
+<dt><a href="/japanese/taiken/bochou/kengaku.html" title="国会体験・見学">国会体験・見学</a></dt>
+<dt><a href="/japanese/kokusai_kankei/index.html" title="国際関係">国際関係</a></dt>
+<dt><a href="/japanese/annai/chousa/index.html" title="調査室作成資料">調査室作成資料</a></dt>
+</dl>
+
+<dl class="local_navigation">
+<dt><a href="http://www.webtv.sangiin.go.jp" title="参議院審議中継" target="_blank">参議院審議中継</a></dt>
+<dt><a href="/japanese/taiken/t_program/t_program.html" title="特別体験プログラム">特別体験プログラム</a></dt>
+<dt><a href="/japanese/kids/index.html" title="キッズページ">キッズページ</a></dt>
+</dl>
+
+</div>
+<!--//左ボックスここまで -->
+
+<!-- 右ボックスここから -->
+<div id="LocalRight">
+<!-- パンくずここから -->
+<div id="BreadCrimbs">
+<ol>
+<li><a href="/" title="トップ">トップ</a> &gt; </li>
+<li>本会議投票結果</li>
+</ol>
+</div>
+<!--// パンくずここまで -->
+
+<!-- コンテンツここから -->
+<div id="ContentsBox">
+
+
+<TABLE WIDTH="590" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD>
+<TABLE WIDTH="100%"  BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR BGCOLOR="#FFFFFF">
+<TD ALIGN="LEFT">
+<h1 id="Title01" class="mt10">本会議投票結果</h1>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</table>
+<br>
+<table width="590" border="0">
+<tr>
+<td ALIGN="LEFT">
+<font size="3"><p>記名投票及び押しボタン投票の結果を掲載しています。</p></font>
+</td>
+</tr>
+<tr>
+<td height="66">
+<font color=#af1b65 size="5"><p align="center"><b>第177回国会本会議投票結果</b></p></font>
+</td>
+</tr>
+<tr>
+<td valign="TOP" align="left" height="2">
+<div align="right"></div>
+</td>
+</tr>
+<tr>
+<td ALIGN="LEFT">
+<font size="3"><p>案件名をクリックすると投票情報が表示されます。 </p></font>
+</td>
+</tr>
+</table>
+<DIV class="list">
+<table cellpadding="4"class="list" border="2" bordercolor="black" width="590">
+<tr>
+<th nowrap><font size="3"><p>日付</p></font></th>
+<th><font size="3"><p>案件名</p></font></th>
+</tr>
+
+<!--START-->
+
+<!--START[20110622]-->
+<TR><TD nowrap rowspan=4 valign="top"><font size="3"><p>平成23年6月22日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0622-v001.htm"><p>日程第１　現下の厳しい経済状況及び雇用情勢に対応して税制の整備を図るための地方税法等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0622-v002.htm"><p>日程第２　現下の厳しい経済状況及び雇用情勢に対応して税制の整備を図るための所得税法等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0622-v003.htm"><p>日程第３　東日本大震災に対処して金融機関等の経営基盤の充実を図るための金融機能の強化のための特別措置に関する法律及び金融機関等の組織再編成の促進に関する特別措置法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0622-v004.htm"><p>日程第４　総合特別区域法案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110622]-->
+<!--START[20110620]-->
+<TR><TD nowrap rowspan=2 valign="top"><font size="3"><p>平成23年6月20日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0620-v001.htm"><p>日程第１　東日本大震災復興基本法案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0620-v002.htm"><p>日程第２　地方自治法第百五十六条第四項の規定に基づき、現地対策本部の設置に関し承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110620]-->
+<!--START[20110617]-->
+<TR><TD nowrap rowspan=8 valign="top"><font size="3"><p>平成23年6月17日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0617-v001.htm"><p>日程第１　津波対策の推進に関する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0617-v002.htm"><p>日程第２　情報処理の高度化等に対処するための刑法等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0617-v003.htm"><p>日程第３　東日本大震災に伴う相続の承認又は放棄をすべき期間に係る民法の特例に関する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0617-v004.htm"><p>日程第４　独立行政法人年金・健康保険福祉施設整理機構法の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0617-v005.htm"><p>日程第５　障害者虐待の防止、障害者の養護者に対する支援等に関する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0617-v006.htm"><p>日程第６　母体保護法の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0617-v007.htm"><p>日程第７　特定船舶の入港の禁止に関する特別措置法第五条第一項の規定に基づき、特定船舶の入港禁止の実施につき承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0617-v008.htm"><p>日程第８　スポーツ基本法案（衆議院提出）</p></A></font></TT></TD></TR>
+<!--END[20110617]-->
+<!--START[20110615]-->
+<TR><TD nowrap rowspan=6 valign="top"><font size="3"><p>平成23年6月15日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0615-v001.htm"><p>日程第１　所得に対する租税に関する二重課税の回避及び脱税の防止のための日本国政府と中華人民共和国香港特別行政区政府との間の協定の締結について承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0615-v002.htm"><p>日程第２　所得に対する租税に関する二重課税の回避及び脱税の防止のための日本国政府とサウジアラビア王国政府との間の条約の締結について承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0615-v003.htm"><p>日程第３　脱税の防止のための情報の交換及び個人の所得についての課税権の配分に関する日本国政府とケイマン諸島政府との間の協定の締結について承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0615-v004.htm"><p>日程第４　脱税の防止のための情報の交換及び個人の所得についての課税権の配分に関する日本国政府とバハマ国政府との間の協定の締結について承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0615-v005.htm"><p>日程第５　特定非営利活動促進法の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0615-v006.htm"><p>日程第６　介護サービスの基盤強化のための介護保険法等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110615]-->
+<!--START[20110613]-->
+<TR><TD nowrap rowspan=2 valign="top"><font size="3"><p>平成23年6月13日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0613-v001.htm"><p>日程第１　国家公務員等の任命に関する件「情報公開・個人情報保護審査会委員（森田明君、市川玲子君及び大橋洋一君）、預金保険機構理事（小幡浩之君）、公害等調整委員会委員（柴山秀雄君）、中央更生保護審査会委員長（安倍嘉人君）、日本銀行政策委員会審議委員（石田浩二君）、労働保険審査会委員（神尾真知子君）、中央社会保険医療協議会委員（森田朗君及び石津寿惠君）、土地鑑定委員会委員（鎌田薫君、石橋勲君、井出多加子君、緒方瑞穂君、白田佳子君、都築武保君及び光多長温君）及び運輸安全委員会委員（庄司邦昭君、横山鐵男君及び根本美奈君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0613-v002.htm"><p>日程第１　国家公務員等の任命に関する件「預金保険機構理事（井上美昭君）及び公害等調整委員会委員（髙橋滋君）」</p></A></font></TT></TD></TR>
+<!--END[20110613]-->
+<!--START[20110608]-->
+<TR><TD nowrap rowspan=5 valign="top"><font size="3"><p>平成23年6月8日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0608-v001.htm"><p>日程第１　環境の保全のための意欲の増進及び環境教育の推進に関する法律の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0608-v002.htm"><p>日程第２　日本国有鉄道清算事業団の債務等の処理に関する法律等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0608-v003.htm"><p>日程第３　東日本大震災に伴う地上デジタル放送に係る電波法の特例に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0608-v004.htm"><p>日程第４　農林水産省設置法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0608-v005.htm"><p>日程第５　地方自治法第百五十六条第四項の規定に基づき、地方農政局及び北海道農政事務所の地域センターの設置に関し承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110608]-->
+<!--START[20110601]-->
+<TR><TD nowrap rowspan=1 valign="top"><font size="3"><p>平成23年6月1日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0601-v001.htm"><p>日程第２　東日本大震災の被災者に係る一般旅券の発給の特例に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110601]-->
+<!--START[20110527]-->
+<TR><TD nowrap rowspan=5 valign="top"><font size="3"><p>平成23年5月27日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0527-v001.htm"><p>日程第１　図書に関する日本国政府と大韓民国政府との間の協定の締結について承認を求めるの件（第１７６回国会内閣提出、第１７７回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0527-v002.htm"><p>日程第２　水質汚濁防止法の一部を改正する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0527-v003.htm"><p>日程第３　民法等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0527-v004.htm"><p>日程第４　日本放送協会平成二十年度財産目録、貸借対照表、損益計算書、資本等変動計算書及びキャッシュ・フロー計算書並びにこれらに関する説明書</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0527-v005.htm"><p>日程第５　日本放送協会平成二十一年度財産目録、貸借対照表、損益計算書、資本等変動計算書及びキャッシュ・フロー計算書並びにこれらに関する説明書</p></A></font></TT></TD></TR>
+<!--END[20110527]-->
+<!--START[20110520]-->
+<TR><TD nowrap rowspan=5 valign="top"><font size="3"><p>平成23年5月20日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0520-v001.htm"><p>日程第１　社会保障に関する日本国とブラジル連邦共和国との間の協定の締結について承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0520-v002.htm"><p>日程第２　社会保障に関する日本国とスイス連邦との間の協定の締結について承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0520-v003.htm"><p>日程第３　日本国とインド共和国との間の包括的経済連携協定の締結について承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0520-v004.htm"><p>日程第４　平成二十三年東北地方太平洋沖地震に伴う地方公共団体の議会の議員及び長の選挙期日等の臨時特例に関する法律の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0520-v005.htm"><p>日程第５　地方公務員等共済組合法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110520]-->
+<!--START[20110518]-->
+<TR><TD nowrap rowspan=2 valign="top"><font size="3"><p>平成23年5月18日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0518-v001.htm"><p>日程第１　産業活力の再生及び産業活動の革新に関する特別措置法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0518-v002.htm"><p>参議院憲法審査会規程案（鈴木政二君外７名発議）</p></A></font></TT></TD></TR>
+<!--END[20110518]-->
+<!--START[20110513]-->
+<TR><TD nowrap rowspan=3 valign="top"><font size="3"><p>平成23年5月13日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0513-v001.htm"><p>日程第２　預金保険法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0513-v002.htm"><p>日程第３　職業訓練の実施等による特定求職者の就職の支援に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0513-v003.htm"><p>日程第４　雇用保険法及び労働保険の保険料の徴収等に関する法律の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110513]-->
+<!--START[20110502]-->
+<TR><TD nowrap rowspan=8 valign="top"><font size="3"><p>平成23年5月2日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0502-v001.htm"><p>日程第１　平成二十三年度一般会計補正予算（第１号）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0502-v002.htm"><p>日程第２　平成二十三年度特別会計補正予算（特第１号）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0502-v003.htm"><p>日程第３　平成二十三年度政府関係機関補正予算（機第１号）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0502-v004.htm"><p>東日本大震災に対処するための特別の財政援助及び助成に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0502-v005.htm"><p>東日本大震災に対処するために必要な財源の確保を図るための特別措置に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0502-v006.htm"><p>東日本大震災に対処するための土地改良法の特例に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0502-v007.htm"><p>東日本大震災に伴う海区漁業調整委員会及び農業委員会の委員の選挙の臨時特例に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0502-v008.htm"><p>平成二十三年度分の地方交付税の総額の特例等に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110502]-->
+<!--START[20110428]-->
+<TR><TD nowrap rowspan=6 valign="top"><font size="3"><p>平成23年4月28日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0428-v001.htm"><p>株式会社国際協力銀行法案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0428-v002.htm"><p>地域主権改革の推進を図るための関係法律の整備に関する法律案（第１７４回国会内閣提出、第１７７回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0428-v003.htm"><p>国と地方の協議の場に関する法律案（第１７４回国会内閣提出、第１７７回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0428-v004.htm"><p>地方自治法の一部を改正する法律案（第１７４回国会内閣提出、第１７７回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0428-v005.htm"><p>東日本大震災による被害を受けた公共土木施設の災害復旧事業等に係る工事の国等による代行に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0428-v006.htm"><p>東日本大震災により甚大な被害を受けた市街地における建築制限の特例に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110428]-->
+<!--START[20110427]-->
+<TR><TD nowrap rowspan=8 valign="top"><font size="3"><p>平成23年4月27日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0427-v001.htm"><p>日程第１　資本市場及び金融業の基盤強化のための金融商品取引法等の一部を改正する法律案（内閣提出）「委員長報告のとおり修正議決すること」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0427-v002.htm"><p>日程第２　東日本大震災の被災者等に係る国税関係法律の臨時特例に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0427-v003.htm"><p>日程第３　高齢者の居住の安定確保に関する法律等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0427-v004.htm"><p>日程第４　犯罪による収益の移転防止に関する法律の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0427-v005.htm"><p>日程第５　非訟事件手続法案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0427-v006.htm"><p>日程第６　家事事件手続法案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0427-v007.htm"><p>日程第７　非訟事件手続法及び家事事件手続法の施行に伴う関係法律の整備等に関する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0427-v008.htm"><p>日程第８　地方税法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110427]-->
+<!--START[20110420]-->
+<TR><TD nowrap rowspan=12 valign="top"><font size="3"><p>平成23年4月20日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v001.htm"><p>日程第１　防衛施設周辺の生活環境の整備等に関する法律の一部を改正する法律案（第１７４回国会内閣提出、第１７６回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v002.htm"><p>日程第２　在外公館の名称及び位置並びに在外公館に勤務する外務公務員の給与に関する法律の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v003.htm"><p>日程第３　関西国際空港及び大阪国際空港の一体的かつ効率的な設置及び管理に関する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v004.htm"><p>日程第４　航空法の一部を改正する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v005.htm"><p>日程第５　都市再生特別措置法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v006.htm"><p>日程第６　民事訴訟法及び民事保全法の一部を改正する法律案（第１７６回国会内閣提出衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v007.htm"><p>日程第７　民間資金等の活用による公共施設等の整備等の促進に関する法律の一部を改正する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v008.htm"><p>日程第８　戦傷病者等の妻に対する特別給付金支給法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v009.htm"><p>日程第９　独立行政法人日本学術振興会法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v010.htm"><p>日程第１０　電波法の一部を改正する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v011.htm"><p>日程第１１　電気通信事業法及び日本電信電話株式会社等に関する法律の一部を改正する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0420-v012.htm"><p>日程第１２　電気通信基盤充実臨時措置法の一部を改正する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<!--END[20110420]-->
+<!--START[20110415]-->
+<TR><TD nowrap rowspan=9 valign="top"><font size="3"><p>平成23年4月15日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0415-v001.htm"><p>東日本大震災に対する国際的支援に感謝する決議案（鈴木政二君外１４名発議）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0415-v002.htm"><p>日程第１　独立行政法人雇用・能力開発機構法を廃止する法律案（第１７６回国会内閣提出衆議院送付）「委員長報告のとおり修正議決すること」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0415-v003.htm"><p>日程第２　特許法等の一部を改正する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0415-v004.htm"><p>日程第３　不正競争防止法の一部を改正する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0415-v005.htm"><p>日程第４　裁判所職員定員法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0415-v006.htm"><p>日程第５　森林法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0415-v007.htm"><p>日程第６　お茶の振興に関する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0415-v008.htm"><p>日程第７　環境影響評価法の一部を改正する法律案（第１７４回国会内閣提出、第１７６回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0415-v009.htm"><p>日程第８　公立義務教育諸学校の学級編制及び教職員定数の標準に関する法律の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110415]-->
+<!--START[20110331]-->
+<TR><TD nowrap rowspan=20 valign="top"><font size="3"><p>平成23年3月31日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v001.htm"><p>国家公務員等の任命に関する件「情報公開・個人情報保護審査会委員（戸澤和彦君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v002.htm"><p>国家公務員等の任命に関する件「情報公開・個人情報保護審査会委員（山田洋君及び椿愼美君）、預金保険機構監事（飯田小夜子君）、日本放送協会経営委員会委員（數土文夫君）及び公害健康被害補償不服審査会委員（町田和子君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v003.htm"><p>国家公務員等の任命に関する件「日本銀行政策委員会審議委員（白井早由里君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v004.htm"><p>日程第１　踏切道改良促進法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v005.htm"><p>港湾法及び特定外貿埠頭の管理運営に関する法律の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v006.htm"><p>日程第２　関税定率法等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v007.htm"><p>日程第３　国際通貨基金及び国際復興開発銀行への加盟に伴う措置に関する法律等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v008.htm"><p>日程第５　国民生活等の混乱を回避するための租税特別措置法等の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v009.htm"><p>日程第４　中小企業者等に対する金融の円滑化を図るための臨時措置に関する法律の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v010.htm"><p>日程第６　地方交付税法等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v011.htm"><p>日程第７　国民生活等の混乱を回避するための地方税法の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v012.htm"><p>放送法第三十七条第二項の規定に基づき、承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v013.htm"><p>原子力の平和的利用における協力のための日本国政府とヨルダン・ハシェミット王国政府との間の協定の締結について承認を求めるの件</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v014.htm"><p>日本国の自衛隊とオーストラリア国防軍との間における物品又は役務の相互の提供に関する日本国政府とオーストラリア政府との間の協定の締結について承認を求めるの件</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v015.htm"><p>日本国とアメリカ合衆国との間の相互協力及び安全保障条約第六条に基づく施設及び区域並びに日本国における合衆国軍隊の地位に関する協定第二十四条についての新たな特別の措置に関する日本国とアメリカ合衆国との間の協定の締結について承認を求めるの件（衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v016.htm"><p>所得に対する租税に関する二重課税の回避のための日本国とスイスとの間の条約を改正する議定書の締結について承認を求めるの件</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v017.htm"><p>所得に対する租税に関する二重課税の回避及び脱税の防止のための日本国とオランダ王国との間の条約の締結について承認を求めるの件</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v018.htm"><p>国民生活等の混乱を回避するための平成二十二年度における子ども手当の支給に関する法律の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v019.htm"><p>内閣府設置法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0331-v020.htm"><p>平成二十三年東北地方太平洋沖地震等による災害からの復旧復興に資するための国会議員の歳費の月額の減額特例に関する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<!--END[20110331]-->
+<!--START[20110329]-->
+<TR><TD nowrap rowspan=5 valign="top"><font size="3"><p>平成23年3月29日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0329-v001.htm"><p>平成二十三年度一般会計予算</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0329-v002.htm"><p>平成二十三年度特別会計予算</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0329-v003.htm"><p>平成二十三年度政府関係機関予算</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0329-v004.htm"><p>日程第１　家畜伝染病予防法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0329-v005.htm"><p>日程第２　公害の防止に関する事業に係る国の財政上の特別措置に関する法律の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110329]-->
+<!--START[20110325]-->
+<TR><TD nowrap rowspan=2 valign="top"><font size="3"><p>平成23年3月25日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0325-v001.htm"><p>日程第１　展覧会における美術品損害の補償に関する法律案（第１７６回国会内閣提出衆議院送付）「委員長報告のとおり修正議決すること」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0325-v002.htm"><p>日程第２　海外の美術品等の我が国における公開の促進に関する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<!--END[20110325]-->
+<!--START[20110318]-->
+<TR><TD nowrap rowspan=2 valign="top"><font size="3"><p>平成23年3月18日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0318-v001.htm"><p>日程第１　地震防災対策特別措置法の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0318-v002.htm"><p>日程第２　平成二十三年東北地方太平洋沖地震に伴う地方公共団体の議会の議員及び長の選挙期日等の臨時特例に関する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20110318]-->
+<!--START[20110216]-->
+<TR><TD nowrap rowspan=7 valign="top"><font size="3"><p>平成23年2月16日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0216-v001.htm"><p>日程第２　平成二十年度一般会計予備費使用総調書及び各省各庁所管使用調書（第１７３回国会内閣提出、第１７６回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0216-v002.htm"><p>日程第３　平成二十年度特別会計予算総則第七条第一項の規定による経費増額総調書及び各省各庁所管経費増額調書（第１７３回国会内閣提出、第１７６回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0216-v003.htm"><p>日程第４　平成二十年度決算調整資金からの歳入組入れに関する調書（第１７３回国会内閣提出、第１７６回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0216-v004.htm"><p>日程第５　平成二十年度一般会計歳入歳出決算、平成二十年度特別会計歳入歳出決算、平成二十年度国税収納金整理資金受払計算書、平成二十年度政府関係機関決算書「委員長報告のとおり是認すること」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0216-v005.htm"><p>日程第５　平成二十年度一般会計歳入歳出決算、平成二十年度特別会計歳入歳出決算、平成二十年度国税収納金整理資金受払計算書、平成二十年度政府関係機関決算書「委員長報告のとおり内閣に対し警告すること」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0216-v006.htm"><p>日程第６　平成二十年度国有財産増減及び現在額総計算書</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0216-v007.htm"><p>日程第７　平成二十年度国有財産無償貸付状況総計算書</p></A></font></TT></TD></TR>
+<!--END[20110216]-->
+<!--START[20110209]-->
+<TR><TD nowrap rowspan=4 valign="top"><font size="3"><p>平成23年2月9日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0209-v001.htm"><p>国家公務員等の任命に関する件「検査官（森田祐司君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0209-v002.htm"><p>国家公務員等の任命に関する件「国家公安委員会委員（前田晃伸君）、労働保険審査会委員（小賀野晶一君）、中央社会保険医療協議会委員（印南一路君及び西村万里子君）、社会保険審査会委員長（渡邉等君）及び同委員（宮城準子君及び西島幸夫君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0209-v003.htm"><p>国家公務員等の任命に関する件「宇宙開発委員会委員（服部重彦君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="177-0209-v004.htm"><p>国家公務員等の任命に関する件「運輸審議会委員（島村勝巳君）」</p></A></font></TT></TD></TR>
+<!--END[20110209]-->
+
+<!--END-->
+
+</table>
+</DIV>
+
+
+</div>
+<!--// コンテンツここまで -->
+
+</div>
+<!--//右ボックスここまで -->
+<div class="clearing"><img src="../../common/images/layout/spacer.gif" alt="" width="1" height="1"></div>
+<!-- コンテンツ下ナビゲーションここから -->
+<div id="BottomNavi">
+<ul id="SecondaryNavi">
+<li id="Guide"><a href="/japanese/riyouannai/index.html" title="利用案内">利用案内</a></li>
+<li id="Copy"><a href="/japanese/chosakuken/index.html" title="著作権">著作権</a></li>
+<li id="Immunity"><a href="/japanese/menseki/index.html" title="免責事項">免責事項</a></li>
+<li id="Opinion"><a href="/japanese/goiken_gositumon/index.html" title="ご意見・ご質問">ご意見・ご質問</a></li>
+</ul>
+</div>
+<!--// コンテンツ下ナビゲーションここまで -->
+</div>
+<!--// ローカルコンテンツボックスここまで -->
+
+<!-- フッターここから -->
+<div id="Footer">
+<address><img src="../../common/images/layout/copy.gif" alt="All rights reserved. Copyright(c) , House of Councillors, The National Diet of Japan " width="449" height="12">
+</address>
+</div>
+<!--// フッターここまで -->
+</div>
+<!--// ラッパーここまで -->
+</div>
+</body>
+</html>
+

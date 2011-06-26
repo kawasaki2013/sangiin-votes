@@ -1,0 +1,248 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+
+<title>本会議投票結果：参議院ホームページ</title>
+<link rel="stylesheet" title="" href="../../common/css/import.css" type="text/css" media="all">
+<link rel="alternate stylesheet" type="text/css" media="all" title="small" href="../../common/css/small.css">
+<link rel="alternate stylesheet" type="text/css" media="all" title="medium" href="../../common/css/medium.css">
+<link rel="alternate stylesheet" type="text/css" media="all" title="large" href="../../common/css/large.css">
+<script type="text/javascript" src="../../common/js/fontsizer.js">
+</script>
+
+<STYLE type="text/css">
+<!--
+.pro   { background: #FFFF66; white-space: pre; text-align: center; font-size: 100%;}
+.con   { background: #99FF99; white-space: pre; color: #009900; text-align: center; font-size: 100%;}
+.ttl   { white-space: pre; font-size: 100%;}
+.party { background: #CCCCFF; white-space: pre; text-align: left;}
+.nam   { text-align: left; font-size: 100%;}
+-->
+</STYLE>
+</head>
+
+<body>
+<div id="OutWrapper">
+<!-- ラッパーここから -->
+<div id="Wrapper">
+<!-- ヘッダーここから -->
+<div id="Header">
+<div id="HeadLeft">
+<p id="Logo"><a href="/"><img src="../../common/images/layout/logo.jpg" alt="参議院" width="471" height="58"></a></p>
+</div>
+<div id="Headright">
+<form action="http://online.sangiin.go.jp/cgi-bin/search/search.cgi" method="get">
+<input type="image" src="../../common/images/navigation/search_btn.jpg" alt="検索" name="search" value="検索" id="SearBtn">
+<input name="q" class="font12px" value="" size="20" type="text">
+<a href="http://online.sangiin.go.jp/cgi-bin/search/search.cgi" title="検索方法">検索方法</a>
+</form>
+<div id="FonSiBox">
+<ul id="FontSizer">
+<li><img src="../../common/images/layout/font_size_title.gif" alt="文字サイズの変更" width="96" height="12" id="FST">
+</li>
+<li><a href="#OutWrapper" title="標準" onclick="return selectStyle('small')" onkeypress="return selectStyle('small')"><img src="../../common/images/navigation/sizebt_small.jpg" alt="標準" name="small" width="29" height="18" id="small"></a></li>
+<li><a href="#OutWrapper" title="拡大" onclick="return selectStyle('medium')" onkeypress="return selectStyle('medium')"><img src="../../common/images/navigation/sizebt_base.jpg" alt="拡大" name="medium" width="29" height="18" id="medium"></a></li>
+<li><a href="#OutWrapper" title="最大" onclick="return selectStyle('large')" onkeypress="return selectStyle('large')"><img src="../../common/images/navigation/sizebt_big.jpg" alt="最大" name="large" width="29" height="18" id="large"></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<!--// ヘッダーここまで -->
+
+<!-- グローバルナビゲーションここから -->
+<div id="PrimaryNavi">
+<ul id="GlobalNavi">
+<li id="Sitemap"><a href="/japanese/sitemap/index.html" title="サイトマップ">サイトマップ</a></li>
+<li id="Faq"><a href="/japanese/goiken_gositumon/faq/index.html" title="よくある質問">よくある質問</a></li>
+<li id="Link"><a href="/japanese/link/index.html" title="リンク集">リンク集</a></li>
+<li id="English"><a href="/eng/index.htm" title="English">English</a></li>
+</ul>
+</div>
+<!--// グローバルナビゲーションここまで -->
+<div class="clearing"><img src="../../common/images/layout/spacer.gif" alt="" width="1" height="1"></div>
+
+<!-- ローカルコンテンツボックスここから -->
+<div id="LocalContents">
+
+<!-- 左ボックスここから -->
+<div id="LocalLeft">
+<dl class="local_navigation">
+<dt id="HomeLink"><a href="/" title="トップページに戻る">トップページに戻る</a></dt>
+<dt><a href="/japanese/joho1/kousei/giin/current/yakuin.htm" target="_parent" title="議員情報">議員情報</a></dt>
+<dt><a href="/japanese/kon_kokkaijyoho/index.html" title="今国会情報" target="_parent">今国会情報</a></dt>
+<dt><a href="/japanese/kaiki/index.html" target="_parent" title="ライブラリー">ライブラリー</a></dt>
+<dt><a href="/japanese/joho1/kousei/gian/current/gian.htm" target="_parent" title="議案情報">議案情報</a></dt>
+<dt><a href="/japanese/joho1/kaigirok/kaigirok.htm" target="_parent" title="会議録情報">会議録情報</a></dt>
+<dt><a href="/japanese/joho1/kousei/seigan/current/seigan.htm" target="_parent" title="請願">請願</a></dt>
+<dt><a href="/japanese/joho1/kousei/syuisyo/current/syuisyo.htm" target="_parent" title="質問主意書">質問主意書</a></dt>
+<dt><a href="/japanese/joho1/kousei/koho/current/koho.htm" target="_parent" title="参議院公報">参議院公報</a></dt>
+</dl>
+
+<dl class="local_navigation">
+<dt><a href="/japanese/aramashi/index.html" title="参議院のあらまし">参議院のあらまし</a></dt>
+<dt><a href="/japanese/taiken/bochou/kengaku.html" title="国会体験・見学">国会体験・見学</a></dt>
+<dt><a href="/japanese/kokusai_kankei/index.html" title="国際関係">国際関係</a></dt>
+<dt><a href="/japanese/annai/chousa/index.html" title="調査室作成資料">調査室作成資料</a></dt>
+</dl>
+
+<dl class="local_navigation">
+<dt><a href="http://www.webtv.sangiin.go.jp" title="参議院審議中継" target="_blank">参議院審議中継</a></dt>
+<dt><a href="/japanese/taiken/t_program/t_program.html" title="特別体験プログラム">特別体験プログラム</a></dt>
+<dt><a href="/japanese/kids/index.html" title="キッズページ">キッズページ</a></dt>
+</dl>
+
+</div>
+<!--//左ボックスここまで -->
+
+<!-- 右ボックスここから -->
+<div id="LocalRight">
+<!-- パンくずここから -->
+<div id="BreadCrimbs">
+<ol>
+<li><a href="/" title="トップ">トップ</a> &gt; </li>
+<li>本会議投票結果</li>
+</ol>
+</div>
+<!--// パンくずここまで -->
+
+<!-- コンテンツここから -->
+<div id="ContentsBox">
+
+
+<TABLE WIDTH="590" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+<TD>
+<TABLE WIDTH="100%"  BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR BGCOLOR="#FFFFFF">
+<TD ALIGN="LEFT">
+<h1 id="Title01" class="mt10">本会議投票結果</h1>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</table>
+<br>
+<table width="590" border="0">
+<tr>
+<td ALIGN="LEFT">
+<font size="3"><p>記名投票及び押しボタン投票の結果を掲載しています。</p></font>
+</td>
+</tr>
+<tr>
+<td height="66">
+<font color=#af1b65 size="5"><p align="center"><b>第176回国会本会議投票結果</b></p></font>
+</td>
+</tr>
+<tr>
+<td valign="TOP" align="left" height="2">
+<div align="right"></div>
+</td>
+</tr>
+<tr>
+<td ALIGN="LEFT">
+<font size="3"><p>案件名をクリックすると投票情報が表示されます。 </p></font>
+</td>
+</tr>
+</table>
+<DIV class="list">
+<table cellpadding="4"class="list" border="2" bordercolor="black" width="590">
+<tr>
+<th nowrap><font size="3"><p>日付</p></font></th>
+<th><font size="3"><p>案件名</p></font></th>
+</tr>
+
+<!--START-->
+
+<!--START[20101203]-->
+<TR><TD nowrap rowspan=9 valign="top"><font size="3"><p>平成22年12月3日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1203-v001.htm"><p>日程第１　国家公務員等の任命に関する件「食品安全委員会委員（熊谷進君）、証券取引等監視委員会委員長（佐渡賢一君）及び預金保険機構理事（新堀敏彦君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1203-v002.htm"><p>日程第１　国家公務員等の任命に関する件「公正取引委員会委員（細川清君）及び宇宙開発委員会委員（河内山治朗君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1203-v003.htm"><p>日程第１　国家公務員等の任命に関する件①「証券取引等監視委員会委員（吉田正之君及び福田眞也君）、運輸安全委員会委員（田村貞雄君、小豆澤照男君、松本陽君、富井規雄君及び岡村美好君）、総合科学技術会議議員（相澤益男君、奥村直樹君及び今榮東洋子君）、預金保険機構理事（軍司育雄君）、電気通信事業紛争処理委員会委員（山本和彦君、尾畑裕君、坂庭好一君、各務洋子君及び渕上玲子君）…②へ続く」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1203-v004.htm"><p>日程第１　国家公務員等の任命に関する件②「①からの続き…日本放送協会経営委員会委員（井原理代君、大滝精一君及び石原進君）、中央更生保護審査会委員（志村洋子君）、中央労働委員会公益委員（菅野和夫君、都築弘君、山本眞弓君、岩村正彦君、春日偉知郎君、鹿野菜穂子君、柴田和史君、諏訪康雄君、仁田道夫君、野﨑薫子君、坂東規子君、鎌田耕一君、藤重由美子君、中窪裕也君及び島田陽一君）及び公害健康被害補償不服審査会委員（桝井成夫君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1203-v005.htm"><p>日程第１　国家公務員等の任命に関する件「総合科学技術会議議員（白石隆君）、預金保険機構理事長（田邉昌徳君）、電波監理審議会委員（前田忠昭君）、公安審査委員会委員（板澤幸雄君）及び運輸審議会委員（大屋則之君及び廻洋子君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1203-v006.htm"><p>日程第１　国家公務員等の任命に関する件「公安審査委員会委員（川野辺充子君）」</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1203-v007.htm"><p>障がい者制度改革推進本部等における検討を踏まえて障害保健福祉施策を見直すまでの間において障害者等の地域生活を支援するための関係法律の整備に関する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1203-v008.htm"><p>原子力発電施設等立地地域の振興に関する特別措置法の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1203-v009.htm"><p>国会議員の歳費、旅費及び手当等に関する法律の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<!--END[20101203]-->
+<!--START[20101127]-->
+<TR><TD nowrap rowspan=1 valign="top"><font size="3"><p>平成22年11月27日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1127-v001.htm"><p>日程第１　国土交通大臣馬淵澄夫君問責決議案（牧野たかお君外７名発議）</p></A></font></TT></TD></TR>
+<!--END[20101127]-->
+<!--START[20101126]-->
+<TR><TD nowrap rowspan=20 valign="top"><font size="3"><p>平成22年11月26日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v001.htm"><p>北朝鮮の韓国・大延坪島砲撃に関する決議案（鈴木政二君外１０名発議）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v002.htm"><p>平成二十二年度一般会計補正予算（第１号）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v003.htm"><p>平成二十二年度特別会計補正予算（特第１号）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v004.htm"><p>平成二十二年度政府関係機関補正予算（機第１号）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v005.htm"><p>日程第１　農林漁業者等による農林漁業の六次産業化の促進に関する法律案（第１７４回国会内閣提出、第１７６回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v006.htm"><p>日程第２　一般職の職員の給与に関する法律等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v007.htm"><p>地方交付税法等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v008.htm"><p>日程第３　特別職の職員の給与に関する法律等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v009.htm"><p>日程第４　国家公務員の育児休業等に関する法律等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v010.htm"><p>高度テレビジョン放送施設整備促進臨時措置法の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v011.htm"><p>放送法等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v012.htm"><p>日程第５　防衛省の職員の給与等に関する法律等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v013.htm"><p>日程第６　裁判官の報酬等に関する法律等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v014.htm"><p>日程第７　検察官の俸給等に関する法律等の一部を改正する法律案（内閣提出、衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v015.htm"><p>日程第８　裁判所法の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v016.htm"><p>国会議員の歳費、旅費及び手当等に関する法律の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v017.htm"><p>国会議員の秘書の給与等に関する法律等の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v018.htm"><p>国会職員の育児休業等に関する法律の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v019.htm"><p>国会職員法の一部を改正する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1126-v020.htm"><p>国務大臣仙谷由人君問責決議案（森まさこ君外９名発議）</p></A></font></TT></TD></TR>
+<!--END[20101126]-->
+<!--START[20101117]-->
+<TR><TD nowrap rowspan=1 valign="top"><font size="3"><p>平成22年11月17日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1117-v001.htm"><p>日程第２　土砂災害警戒区域等における土砂災害防止対策の推進に関する法律の一部を改正する法律案（第１７４回国会内閣提出、第１７６回国会衆議院送付）</p></A></font></TT></TD></TR>
+<!--END[20101117]-->
+<!--START[20101112]-->
+<TR><TD nowrap rowspan=2 valign="top"><font size="3"><p>平成22年11月12日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1112-v001.htm"><p>日程第１　保険業法等の一部を改正する法律の一部を改正する法律案（第１７４回国会内閣提出、第１７６回国会衆議院送付）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1112-v002.htm"><p>日程第２　地域における多様な主体の連携による生物の多様性の保全のための活動の促進等に関する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<!--END[20101112]-->
+<!--START[20101029]-->
+<TR><TD nowrap rowspan=2 valign="top"><font size="3"><p>平成22年10月29日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1029-v001.htm"><p>日程第１　地方公共団体の議会の議員及び長の選挙期日等の臨時特例に関する法律案（内閣提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1029-v002.htm"><p>日程第２　外国為替及び外国貿易法第十条第二項の規定に基づき、北朝鮮を仕向地とする貨物の輸出及び北朝鮮を原産地又は船積地域とする貨物の輸入につき承認義務を課する等の措置を講じたことについて承認を求めるの件</p></A></font></TT></TD></TR>
+<!--END[20101029]-->
+<!--START[20101022]-->
+<TR><TD nowrap rowspan=2 valign="top"><font size="3"><p>平成22年10月22日</p></font></TD><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1022-v001.htm"><p>日程第１　平成二十二年四月以降において発生が確認された口蹄疫に起因して生じた事態に対処するための手当金等についての所得税及び法人税の臨時特例に関する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<TR><TD ALIGN="LEFT"><TT><font size="3"><A HREF="176-1022-v002.htm"><p>日程第２　平成二十二年四月以降において発生が確認された口蹄疫に起因して生じた事態に対処するための手当金等についての個人の道府県民税及び市町村民税の臨時特例に関する法律案（衆議院提出）</p></A></font></TT></TD></TR>
+<!--END[20101022]-->
+
+<!--END-->
+
+</table>
+</DIV>
+
+
+</div>
+<!--// コンテンツここまで -->
+
+</div>
+<!--//右ボックスここまで -->
+<div class="clearing"><img src="../../common/images/layout/spacer.gif" alt="" width="1" height="1"></div>
+<!-- コンテンツ下ナビゲーションここから -->
+<div id="BottomNavi">
+<ul id="SecondaryNavi">
+<li id="Guide"><a href="/japanese/riyouannai/index.html" title="利用案内">利用案内</a></li>
+<li id="Copy"><a href="/japanese/chosakuken/index.html" title="著作権">著作権</a></li>
+<li id="Immunity"><a href="/japanese/menseki/index.html" title="免責事項">免責事項</a></li>
+<li id="Opinion"><a href="/japanese/goiken_gositumon/index.html" title="ご意見・ご質問">ご意見・ご質問</a></li>
+</ul>
+</div>
+<!--// コンテンツ下ナビゲーションここまで -->
+</div>
+<!--// ローカルコンテンツボックスここまで -->
+
+<!-- フッターここから -->
+<div id="Footer">
+<address><img src="../../common/images/layout/copy.gif" alt="All rights reserved. Copyright(c) , House of Councillors, The National Diet of Japan " width="449" height="12">
+</address>
+</div>
+<!--// フッターここまで -->
+</div>
+<!--// ラッパーここまで -->
+</div>
+</body>
+</html>
+
