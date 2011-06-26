@@ -1,0 +1,682 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+
+<title>本会議投票結果：参議院ホームページ</title>
+<link rel="stylesheet" title="" href="../../common/css/import.css" type="text/css" media="all">
+<link rel="alternate stylesheet" type="text/css" media="all" title="small" href="../../common/css/small.css">
+<link rel="alternate stylesheet" type="text/css" media="all" title="medium" href="../../common/css/medium.css">
+<link rel="alternate stylesheet" type="text/css" media="all" title="large" href="../../common/css/large.css">
+<script type="text/javascript" src="../../common/js/fontsizer.js">
+</script>
+
+<STYLE type="text/css">
+<!--
+ .pro   { background: #FFFF66; white-space: pre; text-align: center; font-size: 100%;}
+ .con   { background: #99FF99; white-space: pre; color: #009900; text-align: center; font-size: 100%;}
+ .ttl   { white-space: pre; font-size: 100%;}
+ .party { background: #CCCCFF; white-space: pre; text-align: left;}
+ .nam   { text-align: left; font-size: 100%;}
+-->
+</STYLE>
+</head>
+
+<body>
+<div id="OutWrapper">
+<!-- ラッパーここから -->
+<div id="Wrapper">
+<!-- ヘッダーここから -->
+<div id="Header">
+<div id="HeadLeft">
+<p id="Logo"><a href="/"><img src="../../common/images/layout/logo.jpg" alt="参議院" width="471" height="58"></a></p>
+</div>
+<div id="Headright">
+<form action="http://online.sangiin.go.jp/cgi-bin/search/search.cgi" method="get">
+<input type="image" src="../../common/images/navigation/search_btn.jpg" alt="検索" name="search" value="検索" id="SearBtn">
+<input name="q" class="font12px" value="" size="20" type="text">
+<a href="http://online.sangiin.go.jp/cgi-bin/search/search.cgi" title="検索方法">検索方法</a>
+</form>
+<div id="FonSiBox">
+<ul id="FontSizer">
+<li><img src="../../common/images/layout/font_size_title.gif" alt="文字サイズの変更" width="96" height="12" id="FST">
+</li>
+<li><a href="#OutWrapper" title="標準" onclick="return selectStyle('small')" onkeypress="return selectStyle('small')"><img src="../../common/images/navigation/sizebt_small.jpg" alt="標準" name="small" width="29" height="18" id="small"></a></li>
+<li><a href="#OutWrapper" title="拡大" onclick="return selectStyle('medium')" onkeypress="return selectStyle('medium')"><img src="../../common/images/navigation/sizebt_base.jpg" alt="拡大" name="medium" width="29" height="18" id="medium"></a></li>
+<li><a href="#OutWrapper" title="最大" onclick="return selectStyle('large')" onkeypress="return selectStyle('large')"><img src="../../common/images/navigation/sizebt_big.jpg" alt="最大" name="large" width="29" height="18" id="large"></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<!--// ヘッダーここまで -->
+
+<!-- グローバルナビゲーションここから -->
+<div id="PrimaryNavi">
+<ul id="GlobalNavi">
+<li id="Sitemap"><a href="/japanese/sitemap/index.html" title="サイトマップ">サイトマップ</a></li>
+<li id="Faq"><a href="/japanese/goiken_gositumon/faq/index.html" title="よくある質問">よくある質問</a></li>
+<li id="Link"><a href="/japanese/link/index.html" title="リンク集">リンク集</a></li>
+<li id="English"><a href="/eng/index.htm" title="English">English</a></li>
+</ul>
+</div>
+<!--// グローバルナビゲーションここまで -->
+<div class="clearing"><img src="../../common/images/layout/spacer.gif" alt="" width="1" height="1"></div>
+
+<!-- ローカルコンテンツボックスここから -->
+<div id="LocalContents">
+
+<!-- 左ボックスここから -->
+<div id="LocalLeft">
+<dl class="local_navigation">
+<dt id="HomeLink"><a href="/" title="トップページに戻る">トップページに戻る</a></dt>
+<dt><a href="/japanese/joho1/kousei/giin/current/yakuin.htm" target="_parent" title="議員情報">議員情報</a></dt>
+<dt><a href="/japanese/kon_kokkaijyoho/index.html" title="今国会情報" target="_parent">今国会情報</a></dt>
+<dt><a href="/japanese/kaiki/index.html" target="_parent" title="ライブラリー">ライブラリー</a></dt>
+<dt><a href="/japanese/joho1/kousei/gian/current/gian.htm" target="_parent" title="議案情報">議案情報</a></dt>
+<dt><a href="/japanese/joho1/kaigirok/kaigirok.htm" target="_parent" title="会議録情報">会議録情報</a></dt>
+<dt><a href="/japanese/joho1/kousei/seigan/current/seigan.htm" target="_parent" title="請願">請願</a></dt>
+<dt><a href="/japanese/joho1/kousei/syuisyo/current/syuisyo.htm" target="_parent" title="質問主意書">質問主意書</a></dt>
+<dt><a href="/japanese/joho1/kousei/koho/current/koho.htm" target="_parent" title="参議院公報">参議院公報</a></dt>
+</dl>
+
+<dl class="local_navigation">
+<dt><a href="/japanese/aramashi/index.html" title="参議院のあらまし">参議院のあらまし</a></dt>
+<dt><a href="/japanese/taiken/bochou/kengaku.html" title="国会体験・見学">国会体験・見学</a></dt>
+<dt><a href="/japanese/kokusai_kankei/index.html" title="国際関係">国際関係</a></dt>
+<dt><a href="/japanese/annai/chousa/index.html" title="調査室作成資料">調査室作成資料</a></dt>
+</dl>
+
+<dl class="local_navigation">
+<dt><a href="http://www.webtv.sangiin.go.jp" title="参議院審議中継" target="_blank">参議院審議中継</a></dt>
+<dt><a href="/japanese/taiken/t_program/t_program.html" title="特別体験プログラム">特別体験プログラム</a></dt>
+<dt><a href="/japanese/kids/index.html" title="キッズページ">キッズページ</a></dt>
+</dl>
+
+</div>
+<!--//左ボックスここまで -->
+
+<!-- 右ボックスここから -->
+<div id="LocalRight">
+<!-- パンくずここから -->
+<div id="BreadCrimbs">
+<ol>
+<li><a href="/" title="トップ">トップ</a> &gt; </li>
+<li>本会議投票結果</li>
+</ol>
+</div>
+<!--// パンくずここまで -->
+
+<!-- コンテンツここから -->
+<div id="ContentsBox">
+
+
+
+
+<TABLE WIDTH="590" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <TR>
+    <TD>
+      <TABLE WIDTH="100%"  BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <TR BGCOLOR="#FFFFFF">
+          <TD ALIGN="LEFT">
+            <h1 id="Title01" class="mt10">本会議投票結果</h1>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+</table>
+<br>
+
+<TABLE border=0 cellspacing=0 width="590">
+
+
+
+<TR>
+<TD colspan=12>
+<DIV align="center">
+<TT><font size="3"><p>
+第177回国会<BR>
+2011年 6月 8日<BR>
+投 票 結 果<BR>
+</p></font></TT>
+<BR>
+<TABLE width="100%" border="1">
+<TR><TH align="left" valign="top" nowrap><TT><font size="3"><p>案件名：</p></font></TT></TH><TD align="left"><TT><font size="3"><p>日程第１　環境の保全のための意欲の増進及び環境教育の推進に関する法律の一部を改正する法律案（衆議院提出）</p></font></TT></TD></TR>
+</TABLE>
+<BR>
+<font size="4"><p><B>投票総数　232　　　賛成票　232　　　反対票　0</B></p></font>
+
+</DIV>
+</TD>
+</TR>
+<TR>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+</TR>
+<TR>
+<TH colspan="9" align="left" class="party"><font size="4"><p>民主党・新緑風会(106名)
+<br>　　賛成票 102　　　反対票   0</p></font></TH>
+</TR>
+<TR><p>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+</p></TR>
+<TR><p>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>足立　　信也</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>相原　久美子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>有田　　芳生</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>池口　　修次</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>石井　　　一</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>石橋　　通宏</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>一川　　保夫</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>岩本　　　司</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>植松　恵美子</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>梅村　　　聡</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>江崎　　　孝</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>江田　　五月</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>小川　　勝也</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>小川　　敏夫</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>尾立　　源幸</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大石　　尚子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大河原　雅子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大久保　　勉</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大久保　潔重</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大島　九州男</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大塚　　耕平</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大野　　元裕</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>岡崎　トミ子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>加賀谷　　健</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>加藤　　敏幸</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>風間　　直樹</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>金子　　恵美</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>金子　　洋一</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>神本　美恵子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>川合　　孝典</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>川上　　義博</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>川崎　　　稔</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>北澤　　俊美</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>郡司　　　彰</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>小西　　洋之</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>小林　　正夫</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>小見山　幸治</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>行田　　邦子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>輿石　　　東</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>今野　　　東</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>佐藤　　公治</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>斎藤　　嘉隆</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>櫻井　　　充</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>芝　　　博一</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>主濱　　　了</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>榛葉　賀津也</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>鈴木　　　寛</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>田城　　　郁</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>田中　　直紀</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>高橋　　千秋</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>武内　　則男</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>谷　　　博之</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>谷　　　亮子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>谷岡　　郁子</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>ツルネン　マルテイ</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>津田　弥太郎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>辻　　　泰弘</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>外山　　　斎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>徳永　　エリ</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>徳永　　久志</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>轟木　　利治</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>友近　　聡朗</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>那谷屋　正義</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>直嶋　　正行</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>中谷　　智司</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>中村　　哲治</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>長浜　　博行</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>難波　　奨二</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>西村　まさみ</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>羽田　雄一郎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>白　　　眞勲</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>林　　久美子</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>姫井　由美子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>平田　　健二</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>平野　　達男</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>平山　　幸司</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>平山　　　誠</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>広田　　　一</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>広野　ただし</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>福山　　哲郎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>藤末　　健三</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>藤田　　幸久</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>藤谷　　光信</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>藤本　　祐司</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>藤原　　正司</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>藤原　　良信</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>舟山　　康江</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>前川　　清成</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>前田　　武志</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>牧山　ひろえ</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>増子　　輝彦</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>松井　　孝治</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>松浦　　大悟</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>松野　　信夫</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>水戸　　将史</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>水岡　　俊一</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>室井　　邦彦</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>森　　ゆうこ</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>安井　美沙子</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>柳澤　　光美</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>柳田　　　稔</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山根　　隆治</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>横峯　　良郎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>吉川　　沙織</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>米長　　晴信</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>蓮　　　　舫</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TR>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+</TR>
+<TR>
+<TH colspan="9" align="left" class="party"><font size="4"><p>自由民主党( 83名)
+<br>　　賛成票  81　　　反対票   0</p></font></TH>
+</TR>
+<TR><p>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+</p></TR>
+<TR><p>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>愛知　　治郎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>青木　　一彦</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>赤石　　清美</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>有村　　治子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>石井　　準一</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>石井　　浩郎</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>石井　みどり</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>磯崎　　仁彦</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>礒崎　　陽輔</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>猪口　　邦子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>岩井　　茂樹</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>岩城　　光英</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>宇都　　隆史</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>上野　　通子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>衛藤　　晟一</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大家　　敏志</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>岡田　　直樹</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>岡田　　　広</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>加治屋　義人</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>片山　さつき</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>金子　原二郎</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>川口　　順子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>岸　　　宏一</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>岸　　　信夫</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>北川イッセイ</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>熊谷　　　大</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>小泉　　昭男</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>小坂　　憲次</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>鴻池　　祥肇</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>佐藤　　信秋</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>佐藤　　正久</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>佐藤　ゆかり</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山東　　昭子</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>島尻　安伊子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>末松　　信介</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>鈴木　　政二</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>世耕　　弘成</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>関口　　昌一</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>伊達　　忠一</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>高階　恵美子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>谷川　　秀善</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>塚田　　一郎</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>鶴保　　庸介</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>中川　　雅治</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>中曽根　弘文</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>中西　　祐介</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>中原　　八一</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>中村　　博彦</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>二之湯　　智</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>西田　　昌司</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>野上　浩太郎</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>野村　　哲郎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>長谷川　　岳</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>橋本　　聖子</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>浜田　　和幸</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>林　　　芳正</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>福岡　　資麿</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>藤井　　基之</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>藤川　　政人</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>古川　　俊治</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>牧野　たかお</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>松下　　新平</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>松村　　祥史</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>松村　　龍二</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>松山　　政司</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>丸川　　珠代</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>丸山　　和也</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>三原じゅん子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>水落　　敏栄</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>溝手　　顕正</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>宮沢　　洋一</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>森　　まさこ</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山崎　　　力</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山崎　　正昭</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山田　　俊男</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山谷　えり子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山本　　一太</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山本　　順三</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>吉田　　博美</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>義家　　弘介</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>若林　　健太</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>脇　　　雅史</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>渡辺　　猛之</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TR>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+</TR>
+<TR>
+<TH colspan="9" align="left" class="party"><font size="4"><p>公明党( 19名)
+<br>　　賛成票  19　　　反対票   0</p></font></TH>
+</TR>
+<TR><p>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+</p></TR>
+<TR><p>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>秋野　　公造</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>荒木　　清寛</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>石川　　博崇</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>魚住　裕一郎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>加藤　　修一</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>草川　　昭三</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>木庭　健太郎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>白浜　　一良</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>竹谷　とし子</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>谷合　　正明</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>長沢　　広明</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>西田　　実仁</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>浜田　　昌良</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>松　　あきら</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山口　那津男</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山本　　香苗</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山本　　博司</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>横山　　信一</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>渡辺　　孝男</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD><TT>　</TT></TD>
+<TR>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+</TR>
+<TR>
+<TH colspan="9" align="left" class="party"><font size="4"><p>みんなの党( 11名)
+<br>　　賛成票   9　　　反対票   0</p></font></TH>
+</TR>
+<TR><p>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+</p></TR>
+<TR><p>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>上野　ひろし</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>江口　　克彦</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>小熊　　慎司</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>小野　　次郎</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>川田　　龍平</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>桜内　　文城</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>柴田　　　巧</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>寺田　　典城</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>中西　　健治</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>松田　　公太</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>水野　　賢一</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TR>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+</TR>
+<TR>
+<TH colspan="9" align="left" class="party"><font size="4"><p>日本共産党(  6名)
+<br>　　賛成票   6　　　反対票   0</p></font></TH>
+</TR>
+<TR><p>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+</p></TR>
+<TR><p>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>井上　　哲士</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>市田　　忠義</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>紙　　　智子</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>田村　　智子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大門　実紀史</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山下　　芳生</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD><TT>　</TT></TD>
+<TR>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+</TR>
+<TR>
+<TH colspan="9" align="left" class="party"><font size="4"><p>たちあがれ日本・新党改革(  5名)
+<br>　　賛成票   5　　　反対票   0</p></font></TH>
+</TR>
+<TR><p>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+</p></TR>
+<TR><p>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>荒井　　広幸</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>片山　虎之助</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>中山　　恭子</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>藤井　　孝男</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>舛添　　要一</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD><TT>　</TT></TD>
+<TR>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+</TR>
+<TR>
+<TH colspan="9" align="left" class="party"><font size="4"><p>社会民主党・護憲連合(  4名)
+<br>　　賛成票   4　　　反対票   0</p></font></TH>
+</TR>
+<TR><p>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+</p></TR>
+<TR><p>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>福島　みずほ</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>又市　　征治</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>山内　　徳信</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>吉田　　忠智</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD><TT>　</TT></TD>
+<TR>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+</TR>
+<TR>
+<TH colspan="9" align="left" class="party"><font size="4"><p>国民新党(  3名)
+<br>　　賛成票   2　　　反対票   0</p></font></TH>
+</TR>
+<TR><p>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+</p></TR>
+<TR><p>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>亀井　亜紀子</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>自見　庄三郎</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>森田　　　高</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD><TT>　</TT></TD>
+<TR>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+<TD><TT>　</TT></TD><TD><TT>　</TT></TD><TD><TT>　</TT></TD>
+</TR>
+<TR>
+<TH colspan="9" align="left" class="party"><font size="4"><p>各派に属しない議員(  5名)
+<br>　　賛成票   4　　　反対票   0</p></font></TH>
+</TR>
+<TR><p>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+<TD nowrap class="ttl"><TT>賛成</TT></TD><TD nowrap class="ttl"><TT>反対</TT></TD><TD nowrap class="ttl"><TT></TT></TD>
+</p></TR>
+<TR><p>
+</p></TR><TR><p>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>糸数　　慶子</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>尾辻　　秀久</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>大江　　康弘</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>西岡　　武夫</TT></TD>
+<TD class="pro">○</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>長谷川　大紋</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+</p></TR><TR><p>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD class="nam" width="142"><TT>　</TT></TD>
+<TD class="pro">　</TD><TD class="con">　</TD><TD><TT>　</TT></TD>
+
+</TR>
+
+
+</TABLE>
+
+</div>
+<!--// コンテンツここまで -->
+
+</div>
+<!--//右ボックスここまで -->
+<div class="clearing"><img src="../../common/images/layout/spacer.gif" alt="" width="1" height="1"></div>
+<!-- コンテンツ下ナビゲーションここから -->
+<div id="BottomNavi">
+<ul id="SecondaryNavi">
+<li id="Guide"><a href="/japanese/riyouannai/index.html" title="利用案内">利用案内</a></li>
+<li id="Copy"><a href="/japanese/chosakuken/index.html" title="著作権">著作権</a></li>
+<li id="Immunity"><a href="/japanese/menseki/index.html" title="免責事項">免責事項</a></li>
+<li id="Opinion"><a href="/japanese/goiken_gositumon/index.html" title="ご意見・ご質問">ご意見・ご質問</a></li>
+</ul>
+</div>
+<!--// コンテンツ下ナビゲーションここまで -->
+</div>
+<!--// ローカルコンテンツボックスここまで -->
+
+
+
+<!-- フッターここから -->
+<div id="Footer">
+<address><img src="../../common/images/layout/copy.gif" alt="All rights reserved. Copyright(c) , House of Councillors, The National Diet of Japan " width="449" height="12">
+</address>
+</div>
+<!--// フッターここまで -->
+</div>
+<!--// ラッパーここまで -->
+</div>
+
+</body>
+
+</html>
+
