@@ -6,5 +6,6 @@ api_version: 1
 handlers:
 - url: /fetch
   script: fetch.py
+  login: admin
 - url: /
   script: index.py
