@@ -19,30 +19,34 @@ limitations under the License.
 
 @author: Michinobu Maeda
 '''
-import datetime
-import logging
+#import datetime
+#import logging
 import os
-import re
+#import re
 import yaml
-from google.appengine.api import urlfetch
-from google.appengine.api import taskqueue
-from google.appengine.ext import db
+#from google.appengine.api import taskqueue
+#from google.appengine.ext import db
+from parser.IndexParser import IndexParser
+from parser.SessionParser import SessionParser
+from parser.VoteParser import VoteParser
+import model.Abbreviation
 
 def main():
 
     conf = yaml.load(file(os.path.join(os.path.dirname(__file__), 'conf.yaml'), 'r'))
-    result = urlfetch.fetch(conf['index_url'], headers = {'Cache-Control' : 'max-age=30', 'Pragma' : 'no-cache'} )
+    indexParser = IndexParser()
+    indexParser.parse(conf['index_url'])
+    for sess in indexParser.links:
+        sessionParser = SessionParser()
+        sessionParser.parse(sess)
+        for vote in sessionParser.links:
+            voteParser = VoteParser(sessionParser.sess)
+            voteParser.parse(vote)
+    model.Abbreviation.generate()
 
-    if result.status_code == 200:
-        logging.info('HTTP Response: ' + str(result.status_code))
-        print 'Content-Type: text/plain'
-        print ''
-        print 'OK'
-    else:
-        logging.error('HTTP Response: ' + str(result.status_code))
-        print 'Content-Type: text/plain'
-        print ''
-        print 'Error:' + str(result.status_code)
+    print 'Content-Type: text/plain'
+    print ''
+    print 'OK'
 
 if __name__ == "__main__":
     main()
