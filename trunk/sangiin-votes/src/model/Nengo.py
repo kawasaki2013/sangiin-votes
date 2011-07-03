@@ -33,6 +33,7 @@ wareki_text_r = re.compile(u"([^0-9]+)([0-9]+)[^0-9]*年([0-9]+)[^0-9]*月([0-9]
 warekiex_text_r = re.compile(u"([^0-9]+)([0-9]+)[^0-9]*年（[0-9]+年）([0-9]+)[^0-9]*月([0-9]+)[^0-9]*日", re.UNICODE)
 
 def setnengo(nengo_year_text):
+    nengo_year_text = nengo_year_text.replace(u"元年", u"1年")
     nengo_year_text = utils.numzentohan(nengo_year_text)
     nengo_year_text = utils.erasewhitespace(nengo_year_text)
     nengo_year_text = nengo_year_text.replace(u"（", u"")
@@ -50,6 +51,7 @@ def setnengo(nengo_year_text):
             logging.info("Nengo:" + nengo.key().name() + str(nengo.first))
 
 def getdatefromwareki(wareki_text):
+    wareki_text = wareki_text.replace(u"元年", u"1年")
     wareki_text = utils.numzentohan(wareki_text)
     wareki_text = utils.erasewhitespace(wareki_text)
     if 0 < wareki_text.find(u"（"):

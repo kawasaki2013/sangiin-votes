@@ -19,31 +19,10 @@ limitations under the License.
 
 @author: Michinobu Maeda
 '''
-#import datetime
-#import logging
-import os
-#import re
-import yaml
-#from google.appengine.api import taskqueue
-#from google.appengine.ext import db
-from parser.IndexParser import IndexParser
-from parser.SessionParser import SessionParser
-from parser.VoteParser import VoteParser
-import model.Abbreviation
+from google.appengine.api import taskqueue
 
 def main():
-
-    conf = yaml.load(file(os.path.join(os.path.dirname(__file__), 'conf.yaml'), 'r'))
-    indexParser = IndexParser()
-    indexParser.parse(conf['index_url'])
-    for sess in indexParser.links:
-        sessionParser = SessionParser()
-        sessionParser.parse(sess)
-        for vote in sessionParser.links:
-            voteParser = VoteParser(sessionParser.sess)
-            voteParser.parse(vote)
-    model.Abbreviation.generate()
-
+    taskqueue.add(url='/job/calc', params={})
     print 'Content-Type: text/plain'
     print ''
     print 'OK'

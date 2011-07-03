@@ -24,14 +24,14 @@ import hashlib
 import logging
 from model import utils
 from model.VoteItem import VoteItem
-from model.VoteParty import VoteParty
+from model.VoteItemParty import VoteItemParty
 from BaseParser import BaseParser
 
 class VoteParser(BaseParser):
     
     sess = None
-    voteItem = None
-    voteParty = None
+    item = None
+    party = None
     content = False
     title = False
     date = None
@@ -39,8 +39,8 @@ class VoteParser(BaseParser):
     def __init__(self, sess):
         BaseParser.__init__(self)
         self.sess = sess
-        self.voteItem = None
-        self.voteParty = None
+        self.item = None
+        self.party = None
         self.content = False
         self.title = False
         self.date = None
@@ -59,22 +59,26 @@ class VoteParser(BaseParser):
             text = unicode(data, "utf8")
             text = utils.numzentohan(text)
             text = utils.erasewhitespace(text)
-            year = int(text[:text.find(u"年")])
-            mon = int(text[text.find(u"年")+1:text.find(u"月")])
-            day = int(text[text.find(u"月")+1:text.find(u"日")])
-            self.date = datetime.date(year, mon, day)
+            if text.startswith(u"1") or text.startswith(u"2"):
+                year = int(text[:text.find(u"年")])
+                mon = int(text[text.find(u"年")+1:text.find(u"月")])
+                day = int(text[text.find(u"月")+1:text.find(u"日")])
+                self.date = datetime.date(year, mon, day)
         elif 0 <= data.find("投票総数") and data.find("投票総数") < data.find("賛成票") and data.find("賛成票") < data.find("反対票"):
             text = unicode(data, "utf8")
             text = utils.numzentohan(text)
             text = utils.erasewhitespace(text)
-            self.voteItem.total = int(text[text.find(u"投票総数")+4:text.find(u"賛成票")])
-            self.voteItem.aye = int(text[text.find(u"賛成票")+3:text.find(u"反対票")])
-            self.voteItem.nay = int(text[text.find(u"反対票")+3:])
-            self.voteItem.put()
-            logging.info(str(self.voteItem.date) + ":" + str(self.voteItem.total) + "/" + str(self.voteItem.aye) + "/" + str(self.voteItem.nay) + ":" + self.voteItem.name)
-        elif self.voteItem == None and 0 <= data.find("案件名："):
+            self.item.total = int(text[text.find(u"投票総数")+4:text.find(u"賛成票")])
+            self.item.aye = int(text[text.find(u"賛成票")+3:text.find(u"反対票")])
+            if 0 < text.find(u"【"):
+                self.item.nay = int(text[text.find(u"反対票")+3:text.find(u"【")])
+            else:
+                self.item.nay = int(text[text.find(u"反対票")+3:])
+            self.item.put()
+            logging.info(str(self.item.date) + ":" + str(self.item.total) + "/" + str(self.item.aye) + "/" + str(self.item.nay) + ":" + self.item.name[:20])
+        elif self.item == None and 0 <= data.find("案件名："):
             self.title = True
-        elif self.voteItem == None and self.title == True:
+        elif self.item == None and self.title == True:
             text = unicode(data, "utf8")
             if 0 < len(text):
                 timetable = ""
@@ -86,11 +90,11 @@ class VoteParser(BaseParser):
                     handling = text[text.rfind(u"（"):]
                     text = text[:text.rfind(u"（")]
                 key = hashlib.sha1(text.encode("utf8")).hexdigest()
-                self.voteItem = VoteItem(parent=self.sess, key_name=key, name=text, date=self.date)
-                self.voteItem.timetable = timetable
-                self.voteItem.handling = handling
+                self.item = VoteItem(parent=self.sess, key_name=key, name=text, date=self.date)
+                self.item.timetable = timetable
+                self.item.handling = handling
                 self.title = False
-        elif self.voteItem == None:
+        elif self.item == None:
             pass
         elif 0 <= data.find("(") and  0 <= data.find("名)", data.find("(")):
             text = unicode(data, "utf8")
@@ -98,12 +102,11 @@ class VoteParser(BaseParser):
             text = utils.erasewhitespace(text)
             name = text[:text.find(u"(")]
             total = int(text[text.find(u"(")+1:text.find(u"名)")])
-            self.voteParty =VoteParty(parent=self.voteItem, key_name=name, total=total)
-        elif self.voteParty != None and 0 <= data.find("賛成票") and 0 <= data.find("反対票", data.find("賛成票")):
+            self.party =VoteItemParty(parent=self.item, key_name=name, total=total)
+        elif self.party != None and 0 <= data.find("賛成票") and 0 <= data.find("反対票", data.find("賛成票")):
             text = unicode(data, "utf8")
             text = utils.numzentohan(text)
             text = utils.erasewhitespace(text)
-            self.voteParty.aye = int(text[text.find(u"賛成票")+3:text.find(u"反対票")])
-            self.voteParty.nay = int(text[text.find(u"反対票")+3:])
-            self.voteParty.put()
-            logging.info(self.voteParty.key().name() + ":" + str(self.voteParty.total) + "/" + str(self.voteParty.aye) + "/" + str(self.voteParty.nay))
+            self.party.aye = int(text[text.find(u"賛成票")+3:text.find(u"反対票")])
+            self.party.nay = int(text[text.find(u"反対票")+3:])
+            self.party.put()

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale=1.0,maximum-scale=3.0" />
+    <link type="text/css" rel="stylesheet" href="/static/pc.css" />
+    <title>会派略称 - 管理 - 参議院押しボタン投票集計</title>
+  </head>
+  <body>
+
+<header>
+  <div id="return"><a href="/admin/">&lt; 戻る</a></div>
+  <h1>会派略称</h1>
+</header>
+
+<div class="row">
+  <span class="val title">略称</span>
+  <span class="text title">会派</span>
+</div>
+
+{% for item in items %}
+<form class="row" method="post">
+  <input class="val" type="text" name="abrv" value="{{ item.abrv }}"/>
+  <input class="text" type="text" name="text" value="{{ item.text }}"/>
+  <input class="add" type="submit" name="add" value="更新"/>
+  <input class="del" type="submit" name="del" value="削除"/>
+</form>
+{% endfor %}
+
+<footer>
+  <div id="copyright">Copyright 2011 Michinobu Maeda.</div>
+</footer>
+
+  </body>
+</html>
