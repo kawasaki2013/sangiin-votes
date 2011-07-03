@@ -1,2 +1,12 @@
-#index_url: http://www.sangiin.go.jp/japanese/kaiki/index.html
-index_url: http://localhost/sangiin-votes/japanese/kaiki/index.html
+index_url: http://www.sangiin.go.jp/japanese/kaiki/index.html
+#index_url: http://localhost/sangiin-votes/japanese/kaiki/index.html
+parameter:
+- name: partydecisionthreshold
+  desc: 会派としての賛成・反対の閾値(%)
+  value: 60
+- name: fetchbegsession
+  desc: 取得する先頭の会期の番号
+  value: 177
+- name: fetchendsession
+  desc: 取得する末尾の会期の番号
+  value: 179

@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+body {
+	margin: 0;
+	padding: 0;
+	background: #ccc;
+}
+h1, h2, h3, h4, h5, h6, div, span, p, a, form, input, td, th, header {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font-weight: normal;
+	font-family: sans-serif;
+    text-decoration: none;
+	line-height: 1.5em;
+}
+h1, h2, h3, #return, #copyright, .row, .desc {
+	padding: .1em .5em .1em .5em;
+	background: #ccc;
+}
+.row, .desc {
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #999;
+}
+header, footer {
+    background: #ccc;
+}
+footer {
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #999;
+}
+h1, #return {
+	display: inline-block;
+}
+h2.link, h3.link, #return {
+    background: #999;
+    color: white;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #666;
+}
+h2.link a, h3.link a, #return a {
+	display: inline-block;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+#copyright {
+	font-size: 80%;
+}
+.val {
+	display: inline-block;
+	width: 3em;
+}
+.text {
+    display: inline-block;
+    width: 12em;
+}
+.desc {
+    border-top: none;
+    border-bottom: none;
+    padding-left: 1.5em;
+}
+.title {
+	text-align: center;
+}

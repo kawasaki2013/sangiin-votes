@@ -66,7 +66,9 @@ class IndexParser(BaseParser):
                     self.sess.end = end
                     self.sess.put()
         elif data.startswith("第") and data.endswith("回国会"):
-            self.sess = setsession(unicode(data, "utf-8"))
+            self.sess = setsession(unicode(data, "utf8"))
+        elif data.startswith(" 第") and data.endswith("回国会"):
+            self.sess = setsession(unicode(data, "utf8"))
         elif 0 <= data.find("常会"):
             if self.sess != None and self.sess.sort != u"常会":
                 self.sess.sort = u"常会"

@@ -23,12 +23,14 @@ import logging
 import re
 import utils
 from google.appengine.ext import db
+from VoteItem import VoteItem
 
 class Session(db.Model):
     name = db.StringProperty(required=True)
     start = db.DateProperty(required=False)
     end = db.DateProperty(required=False)
     sort = db.StringProperty(required=False)
+    itemcount = db.IntegerProperty(required=True)
 
 set_sess_r = re.compile(u"[^0-9]+([0-9]+)[^0-9]+", re.UNICODE)
 
@@ -44,7 +46,20 @@ def setsession(name):
         key  = m.string[m.start(1):m.end(1)]
         sess = Session.get_by_key_name(key)
         if sess == None:
-            sess = Session(key_name=key, name=name)
+            sess = Session(key_name=key, name=name, itemcount=0)
             db.put(sess)
             logging.info("Session:" + sess.key().name() + " " + sess.name)
     return sess
+
+def getitemcount(sess):
+    q = VoteItem.all()
+    q.ancestor(sess)
+    return q.count()
+
+def updatesessionitemcount():
+    for sess in Session.all():
+        count = getitemcount(sess)
+        if sess.itemcount != count:
+            sess.itemcount = count
+            sess.put()
+            logging.info(sess.name + ":" + str(sess.itemcount))
