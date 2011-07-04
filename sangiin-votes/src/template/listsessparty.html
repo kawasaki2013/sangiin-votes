@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale=1.0,maximum-scale=3.0" />
+    <link type="text/css" rel="stylesheet" href="/static/pc.css" />
+    <title>参議院押しボタン投票集計</title>
+  </head>
+  <body>
+
+<header>
+  <div id="return"><a href="/list/sessall">&lt; 戻る</a></div>
+  <h1>{{ sess.name }}</h1>
+</header>
+<div class="row">{{ sess.beg.year }}年{{ sess.beg.month }}月{{ sess.beg.day }}日 - {{ sess.end.month }}月{{ sess.end.day }}日 : {{ sess.itemcount }}案件</div>
+
+<div class="listhead">
+  <span class="party">略称</span>
+  <span class="aye">賛成</span> /
+  <span class="nay">反対</span>
+  <span class="rate">賛成率</span>
+</div>
+
+{% for item in items %}
+<div class="row">
+  <span class="party">{{ item.name }}</span>
+  <span class="aye">{{ item.aye }}</span> /
+  <span class="nay">{{ item.nay }}</span>
+  <span class="rate">{{ item.rate }}%</span>
+</div>
+{% endfor %}
+
+<footer>
+  <div id="copyright">Copyright 2011 Michinobu Maeda.</div>
+</footer>
+
+  </body>
+</html>

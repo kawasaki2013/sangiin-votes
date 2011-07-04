@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale=1.0,maximum-scale=3.0" />
+    <link type="text/css" rel="stylesheet" href="/static/pc.css" />
+    <title>参議院押しボタン投票集計</title>
+  </head>
+  <body>
+
+<header>
+  <h1>参議院押しボタン投票集計</h1>
+</header>
+
+{% for item in items %}
+<h2 class="link"><a href="/list/sessparty?sess={{ item.seq }}">{{ item.name }} : {{ item.beg.year }}年{{ item.beg.month }}月{{ item.beg.day }}日 - {{ item.end.month }}月{{ item.end.day }}日</a></h2>
+{% endfor %}
+
+<footer>
+  <div id="copyright">Copyright 2011 Michinobu Maeda.</div>
+</footer>
+
+  </body>
+</html>

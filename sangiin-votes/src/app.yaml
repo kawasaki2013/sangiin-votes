@@ -12,5 +12,7 @@ handlers:
 - url: /admin/(.*)
   script: admin\1.py
   login: admin
+- url: /list/(.*)
+  script: list\1.py
 - url: /
-  script: index.py
+  script: listsessall.py
