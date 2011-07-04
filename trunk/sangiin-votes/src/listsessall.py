@@ -17,16 +17,36 @@ limitations under the License.
 
 @author: Michinobu Maeda
 '''
+import os
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
+from google.appengine.ext.webapp import template
+from model.Session import Session
+
+class SessItem:
+    def __init__(self, seq, name, start, end):
+        self.seq = seq
+        self.name = name
+        self.beg = start
+        self.end = end
+    seq = ""
+    name = ""
+    beg = None
+    end = None
 
 class MainPage(webapp.RequestHandler):
 
     def get(self):
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write('Hello, webapp World!')
+        items = []
+        for sess in Session.all():
+            if 0 < sess.itemcount:
+                items.append(SessItem(sess.key().name(), sess.name, sess.start, sess.end))
+        items.reverse()
+        template_values = { "items":items }
+        path = os.path.join(os.path.dirname(__file__), 'template/listsessall.html')
+        self.response.out.write(template.render(path, template_values))
 
-application = webapp.WSGIApplication([('/', MainPage)], debug=True)
+application = webapp.WSGIApplication([('/list/sessall', MainPage), ('/', MainPage)], debug=True)
 
 def main():
     run_wsgi_app(application)
